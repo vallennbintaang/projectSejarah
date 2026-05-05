@@ -8,7 +8,7 @@
 
   /* ---------- Active Nav Link ---------- */
   function highlightNav() {
-    const path = window.location.pathname.split("/").pop() || "home.html";
+    const path = window.location.pathname.split("/").pop() || "index.html";
     document.querySelectorAll(".nav-links a").forEach((a) => {
       const href = a.getAttribute("href");
       if (href === path) a.classList.add("active");
