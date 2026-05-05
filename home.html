@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberShield — Dasar Keamanan Jaringan</title>
+    <meta
+      name="description"
+      content="Panduan sederhana keamanan jaringan: kenali ancaman siber, cegah, dan tangani serangan dengan langkah-langkah praktis."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav" data-testid="main-nav">
+      <div class="container nav-inner">
+        <a href="./home.html" class="brand" data-testid="brand-link">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>
+          </span>
+          Cyber<span class="dot">/</span>Shield
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" data-testid="nav-toggle-button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <nav>
+          <ul class="nav-links" data-testid="nav-links">
+            <li><a href="./home.html" data-testid="nav-home">Beranda</a></li>
+            <li><a href="./ancaman.html" data-testid="nav-ancaman">Ancaman</a></li>
+            <li><a href="./materi.html" data-testid="nav-materi">Pencegahan &amp; Penanganan</a></li>
+            <li><a href="./infografis.html" data-testid="nav-infografis">Infografis</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="reveal">
+            <span class="eyebrow" data-testid="hero-eyebrow">Dasar Keamanan Jaringan</span>
+            <h1>
+              Kunci
+              <span class="underline">Rumah Digital</span>-mu
+              sebelum maling siber masuk.
+            </h1>
+            <p class="lead">
+              Keamanan jaringan adalah praktik melindungi sistem, data, dan
+              privasimu dari akses tidak sah. Kami jelaskan ancaman nyata,
+              pencegahan sederhana, dan langkah darurat — dalam bahasa yang
+              manusiawi.
+            </p>
+
+            <div class="hero-actions">
+              <a href="./ancaman.html" class="btn btn-primary" data-testid="hero-cta-threats">
+                Kenali Ancaman
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a href="./materi.html" class="btn btn-ghost" data-testid="hero-cta-prevent">
+                Cara Mengantisipasi
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <b data-count="4" data-testid="stat-threats">0</b>
+                <span>Jenis Ancaman</span>
+              </div>
+              <div class="hero-stat">
+                <b data-count="10" data-testid="stat-steps">0</b>
+                <span>Langkah Antisipasi</span>
+              </div>
+              <div class="hero-stat">
+                <b data-count="3" data-testid="stat-tools">0</b>
+                <span>Alat Interaktif</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terminal -->
+          <div class="terminal reveal delay-2" data-testid="hero-terminal">
+            <div class="terminal-bar">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot g"></span>
+              <span class="title">cybershield ~ /secure</span>
+            </div>
+            <div class="terminal-body" data-terminal></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUICK OVERVIEW CARDS -->
+      <section>
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Peta Materi</span>
+            <h2>Semua yang perlu kamu pahami.</h2>
+            <p class="lead">
+              Tiga pilar utama — kenali, cegah, tangani. Setiap poin dijabarkan
+              dengan contoh nyata dan alat interaktif untuk melatih refleks
+              keamananmu.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <a href="./ancaman.html" class="card link-card reveal" data-testid="card-threats">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11V5l8-3 8 3v6c0 6.5-8 11-8 11z"/><path d="M12 8v4M12 16h.01"/></svg>
+              </div>
+              <div>
+                <h3>Ancaman Siber</h3>
+                <p>
+                  Malware, Phishing, DDoS, dan Man-in-the-Middle — kenali
+                  wajahnya sebelum kamu jadi korban.
+                </p>
+              </div>
+              <div class="arrow">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </a>
+
+            <a href="./materi.html" class="card link-card reveal delay-1" data-testid="card-prevention">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <h3>Pencegahan &amp; Penanganan</h3>
+                <p>
+                  Kebiasaan digital sederhana + langkah darurat jika
+                  perangkat/akunmu sudah terlanjur dibobol.
+                </p>
+              </div>
+              <div class="arrow">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </a>
+
+            <a href="./infografis.html" class="card link-card reveal delay-2" data-testid="card-infographic">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+              </div>
+              <div>
+                <h3>Infografis &amp; Kuis</h3>
+                <p>
+                  Ringkasan visual 6 pilar keamanan + kuis cepat “Seberapa aman
+                  kamu?” untuk ukur kewaspadaanmu.
+                </p>
+              </div>
+              <div class="arrow">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ANALOGY -->
+      <section>
+        <div class="container">
+          <div class="grid-2">
+            <div class="reveal">
+              <span class="eyebrow">Analogi</span>
+              <h2 class="mt-1">Keamanan siber = kunci rumah digital.</h2>
+              <p class="lead mt-2">
+                Bayangkan data, akun, dan foto-fotomu ada di dalam rumah.
+                <b class="text-accent">Pintunya</b> adalah password. <b class="text-accent">Gemboknya</b>
+                adalah 2FA. <b class="text-accent">CCTV</b>-nya adalah antivirus dan update
+                rutin. Tanpa itu semua, siapapun bisa keluar-masuk — dan kamu
+                tidak akan pernah tahu.
+              </p>
+            </div>
+
+            <div class="card reveal delay-2">
+              <div class="eyebrow">Kosa kata singkat</div>
+              <h3 class="mt-2">Istilah yang sering muncul</h3>
+              <div class="glossary mt-3">
+                <div class="glossary-item">
+                  <b>Enkripsi</b>
+                  <span>Mengacak data agar tidak terbaca tanpa kunci khusus.</span>
+                </div>
+                <div class="glossary-item">
+                  <b>Patch</b>
+                  <span>“Tambalan” keamanan yang menutup celah di aplikasi/OS.</span>
+                </div>
+                <div class="glossary-item">
+                  <b>2FA</b>
+                  <span>Verifikasi dua langkah; password + kode OTP/app.</span>
+                </div>
+                <div class="glossary-item">
+                  <b>VPN</b>
+                  <span>Terowongan terenkripsi yang menyamarkan lalu lintas internet-mu.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section>
+        <div class="container">
+          <div class="card reveal" style="padding: clamp(2rem, 4vw, 3rem); text-align:center" data-testid="cta-ready">
+            <span class="chip">SIAP DIMULAI?</span>
+            <h2 class="mt-3">Mulai dari yang paling penting: <span class="text-accent">passwordmu.</span></h2>
+            <p class="lead mt-2" style="margin-left:auto;margin-right:auto">
+              Coba alat mini kami untuk mengecek seberapa kuat password-mu hari
+              ini. Gratis, tidak disimpan.
+            </p>
+            <div class="hero-actions" style="justify-content:center">
+              <a href="./materi.html#password-checker" class="btn btn-primary" data-testid="cta-password-checker">
+                Uji Password Saya
+              </a>
+              <a href="./ancaman.html#phishing-sim" class="btn btn-ghost" data-testid="cta-phishing-sim">
+                Coba Simulasi Phishing
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <span class="mono">// cybershield · edukasi keamanan jaringan</span>
+        <span class="mono">Kelompok 3</span>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pencegahan &amp; Penanganan — CyberShield</title>
+    <meta
+      name="description"
+      content="Langkah-langkah praktis untuk mencegah serangan siber, dan panduan darurat jika kamu sudah terlanjur diretas."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+  </head>
+  <body>
+    <header class="nav" data-testid="main-nav">
+      <div class="container nav-inner">
+        <a href="./home.html" class="brand" data-testid="brand-link">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>
+          </span>
+          Cyber<span class="dot">/</span>Shield
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" data-testid="nav-toggle-button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <nav>
+          <ul class="nav-links" data-testid="nav-links">
+            <li><a href="./home.html" data-testid="nav-home">Beranda</a></li>
+            <li><a href="./ancaman.html" data-testid="nav-ancaman">Ancaman</a></li>
+            <li><a href="./materi.html" data-testid="nav-materi">Pencegahan &amp; Penanganan</a></li>
+            <li><a href="./infografis.html" data-testid="nav-infografis">Infografis</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container reveal">
+          <span class="eyebrow">Bab 02 · Pertahanan</span>
+          <h1>Mencegah &amp; Menangani Serangan.</h1>
+          <p class="lead">
+            Mencegah selalu lebih baik daripada mengobati. Kalau sudah kena —
+            ada langkah darurat yang harus kamu lakukan dalam hitungan menit.
+          </p>
+
+          <div class="tabs mt-3" data-tabs="prev-tab">
+            <button class="tab active" data-tab="cegah" data-testid="tab-cegah">Pencegahan</button>
+            <button class="tab" data-tab="tangani" data-testid="tab-tangani">Penanganan</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB: PENCEGAHAN -->
+      <section style="padding-top:1rem">
+        <div class="container">
+          <div class="tab-panel active" data-tab-panel="cegah" data-group="prev-tab">
+            <div class="steps" data-testid="prevention-steps">
+              <!-- 1 -->
+              <article class="step reveal" data-expandable data-testid="step-password">
+                <div class="step-num">01</div>
+                <div>
+                  <h3>Gunakan Password yang Kuat &amp; Berbeda-beda</h3>
+                  <p>Jangan pakai <span class="mono">123456</span> atau tanggal lahir. Gunakan kombinasi huruf besar, kecil, angka, dan simbol — dan jangan pakai satu password untuk semua akun.</p>
+                  <button class="step-toggle" data-expand data-testid="step-password-toggle">
+                    Detail & tips
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="step-detail">
+                    <div class="step-detail-inner">
+                      <p>
+                        Password pendek/umum bisa ditebak dalam hitungan detik
+                        oleh software brute force. Idealnya password ≥ 12 karakter
+                        dengan kombinasi huruf-angka-simbol. Untuk memudahkan,
+                        pakai <b class="text-accent">passphrase</b>: kalimat
+                        yang kamu ingat, misalnya <span class="mono">kopi#hitam-senin@pagi</span>.
+                      </p>
+                      <span class="definisi">Password Manager</span>
+                      <p>
+                        Aplikasi yang menyimpan password berbeda untuk tiap akun (Bitwarden, 1Password, KeePass) — kamu hanya perlu ingat satu master password.
+                      </p>
+                      <p class="mt-3">
+                        <a href="#password-checker" class="btn btn-ghost" data-testid="step-password-cta">
+                          Uji kekuatan passwordku ↓
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 2 -->
+              <article class="step reveal delay-1" data-expandable data-testid="step-2fa">
+                <div class="step-num">02</div>
+                <div>
+                  <h3>Aktifkan 2FA (Two-Factor Authentication)</h3>
+                  <p>Lapisan keamanan tambahan — setelah password, kamu memasukkan kode dari HP/aplikasi authenticator.</p>
+                  <button class="step-toggle" data-expand data-testid="step-2fa-toggle">
+                    Detail & tips
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="step-detail">
+                    <div class="step-detail-inner">
+                      <p>
+                        Walaupun hacker tahu password-mu, mereka tetap tidak bisa masuk tanpa
+                        HP-mu. Aktifkan 2FA minimal untuk: <b class="text-accent">email utama, media sosial, m-banking, dan akun kerja</b>.
+                      </p>
+                      <span class="definisi">Authenticator App</span>
+                      <p>
+                        Aplikasi seperti <span class="mono">Google Authenticator</span> atau <span class="mono">Authy</span> yang menghasilkan kode 6-digit baru setiap 30 detik — lebih aman daripada SMS karena tidak bisa diintip via SIM-swap.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 3 -->
+              <article class="step reveal delay-2" data-expandable data-testid="step-update">
+                <div class="step-num">03</div>
+                <div>
+                  <h3>Rutin Update Sistem &amp; Aplikasi</h3>
+                  <p>Update bukan sekadar fitur baru — biasanya berisi <b class="text-accent">patch</b> yang menutup celah keamanan yang baru ditemukan.</p>
+                  <button class="step-toggle" data-expand>
+                    Detail & tips
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="step-detail">
+                    <div class="step-detail-inner">
+                      <p>
+                        Hacker sering menyasar perangkat yang masih pakai versi lama karena celahnya
+                        sudah diketahui publik. Aktifkan <b>auto update</b> untuk OS (Windows, Android, iOS) dan browser.
+                      </p>
+                      <span class="definisi">Patch</span>
+                      <p>
+                        “Tambalan” keamanan — bagian kecil dari update yang khusus memperbaiki bug
+                        atau celah keamanan tertentu.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 4 -->
+              <article class="step reveal delay-3" data-expandable data-testid="step-links">
+                <div class="step-num">04</div>
+                <div>
+                  <h3>Jangan Asal Klik Link atau Unduh File</h3>
+                  <p>Link mencurigakan di WhatsApp, Email, atau SMS — meski dari teman — harus dikonfirmasi dulu.</p>
+                  <button class="step-toggle" data-expand>
+                    Detail & tips
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="step-detail">
+                    <div class="step-detail-inner">
+                      <p>
+                        Akun temanmu bisa saja sudah dibajak. Kalau dapat link mencurigakan — apalagi
+                        yang pakai tekanan waktu (“cepet, aku butuh”) — verifikasi via telpon atau
+                        chat lain sebelum klik apapun.
+                      </p>
+                      <span class="definisi">Social Engineering</span>
+                      <p>
+                        Teknik menipu yang mengeksploitasi rasa percaya, rasa takut, atau keinginan
+                        tolong-menolong — bukan menyerang sistem, tapi menyerang <b class="text-accent">manusianya</b>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- 5 -->
+              <article class="step reveal delay-4" data-expandable data-testid="step-wifi">
+                <div class="step-num">05</div>
+                <div>
+                  <h3>Hindari WiFi Publik untuk Transaksi Penting</h3>
+                  <p>Jangan buka m-banking atau masukkan password penting saat terhubung ke WiFi umum tanpa pengamanan.</p>
+                  <button class="step-toggle" data-expand>
+                    Detail & tips
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="step-detail">
+                    <div class="step-detail-inner">
+                      <p>
+                        WiFi publik gratis rawan serangan <b class="text-accent">Man-in-the-Middle</b>. Kalau
+                        memang terpaksa, gunakan <b>VPN</b> tepercaya — atau lebih aman lagi, pakai data seluler HP.
+                      </p>
+                      <span class="definisi">VPN (Virtual Private Network)</span>
+                      <p>
+                        “Terowongan” terenkripsi yang menyembunyikan lalu lintas internet-mu
+                        sehingga tidak bisa disadap orang lain di jaringan yang sama.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- TAB: PENANGANAN -->
+          <div class="tab-panel" data-tab-panel="tangani" data-group="prev-tab">
+            <div class="tip-box" style="margin-top:0">
+              <span class="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+              </span>
+              <div>
+                <b>Kalau sudah terlanjur kena</b>
+                <p>Lakukan langkah di bawah ini <b class="text-accent">berurutan</b>. Setiap menit penting — hacker bisa terus mengambil data selama perangkatmu masih online.</p>
+              </div>
+            </div>
+
+            <div class="steps" data-testid="handling-steps">
+              <article class="step reveal" data-expandable>
+                <div class="step-num">01</div>
+                <div>
+                  <h3>Segera Putuskan Koneksi Internet (Isolasi)</h3>
+                  <p>Kursor bergerak sendiri? File tiba-tiba terkunci? Matikan WiFi / cabut kabel LAN sekarang juga.</p>
+                  <button class="step-toggle" data-expand>
+                    Detail
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="step-detail">
+                    <div class="step-detail-inner">
+                      <p>
+                        Memutus koneksi mencegah hacker mencuri data lebih banyak, dan menghentikan virus menyebar ke perangkat lain di jaringan yang sama (printer, HP, komputer keluarga).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="step reveal delay-1" data-expandable>
+                <div class="step-num">02</div>
+                <div>
+                  <h3>Ganti Password dari Perangkat Lain</h3>
+                  <p>Kalau akun (email/medsos) dibajak — ganti password dari HP/komputer lain yang <b class="text-accent">dipastikan aman</b>, bukan dari yang terinfeksi.</p>
+                  <button class="step-toggle" data-expand>
+                    Detail
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="step-detail">
+                    <div class="step-detail-inner">
+                      <p>
+                        Kalau perangkatmu masih terinfeksi spyware/keylogger, password baru yang kamu ketik
+                        bisa langsung kembali bocor. Gunakan perangkat lain (HP keluarga, laptop kantor),
+                        lalu <b>logout semua sesi</b> dari menu keamanan akun.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="step reveal delay-2" data-expandable>
+                <div class="step-num">03</div>
+                <div>
+                  <h3>Pindai dengan Antivirus (Scanning)</h3>
+                  <p>Jalankan pemindaian penuh menggunakan antivirus resmi yang sudah diperbarui.</p>
+                  <button class="step-toggle" data-expand>
+                    Detail
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="step-detail">
+                    <div class="step-detail-inner">
+                      <p>
+                        Windows sudah punya <span class="mono">Microsoft Defender</span> bawaan yang
+                        cukup kuat untuk pengguna biasa. Pastikan <b>definisi virus ter-update</b> sebelum scan.
+                        Jangan pakai antivirus bajakan — bisa jadi malah merupakan malware itu sendiri.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="step reveal delay-3" data-expandable>
+                <div class="step-num">04</div>
+                <div>
+                  <h3>Beri Tahu Orang Lain (Pemberitahuan)</h3>
+                  <p>Sampaikan ke teman &amp; keluarga bahwa akunmu sedang diretas — supaya mereka tidak jadi korban lanjutan.</p>
+                  <button class="step-toggle" data-expand>
+                    Detail
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="step-detail">
+                    <div class="step-detail-inner">
+                      <p>
+                        Hacker sering memanfaatkan akun yang dibajak untuk menipu kontakmu (modus pinjam uang
+                        atau kirim link phishing). Beri tahu lewat jalur komunikasi lain (telpon/WA pribadi
+                        yang aman) agar mereka waspada.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="step reveal delay-4" data-expandable>
+                <div class="step-num">05</div>
+                <div>
+                  <h3>Instal Ulang (Langkah Terakhir)</h3>
+                  <p>Kalau virus — terutama <b class="text-accent">Ransomware</b> — sudah merusak sistem terlalu parah, hapus semua dan instal ulang OS dari awal.</p>
+                  <button class="step-toggle" data-expand>
+                    Detail
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <div class="step-detail">
+                    <div class="step-detail-inner">
+                      <p>
+                        Instal ulang memastikan semua jejak malware hilang. Kebiasaan baik yang
+                        menyelamatkan: <b class="text-accent">backup data penting rutin</b> ke cloud atau
+                        hard disk terpisah, sehingga kalau harus format — kamu tidak kehilangan apapun.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- PASSWORD CHECKER TOOL -->
+          <div id="password-checker" class="reveal">
+            <div class="section-head">
+              <span class="eyebrow">Alat Interaktif</span>
+              <h2>Seberapa Kuat Passwordmu?</h2>
+              <p class="lead">
+                Ketik password-mu (tidak dikirim ke mana-mana — semua diproses
+                di browser). Kami hitung entropy-nya dan cek kriteria dasar.
+              </p>
+            </div>
+
+            <div class="tool" data-testid="password-tool">
+              <div class="tool-head">
+                <h3>Password Strength Checker</h3>
+                <span class="chip">local · aman · tidak disimpan</span>
+              </div>
+
+              <div class="pw-field">
+                <input
+                  type="password"
+                  placeholder="Ketik password untuk diuji…"
+                  autocomplete="new-password"
+                  data-testid="password-input"
+                />
+                <button class="pw-toggle" aria-label="Tampilkan password" data-testid="password-toggle-visibility">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+
+              <div class="pw-bar">
+                <div class="pw-bar-fill" data-testid="password-bar-fill"></div>
+              </div>
+
+              <div class="pw-meta">
+                <span><span class="label">Kekuatan:</span> <b data-testid="password-strength-label">-</b></span>
+                <span data-testid="password-entropy">0 bit entropy</span>
+              </div>
+
+              <div class="pw-checks">
+                <div class="pw-check" data-check="length">
+                  <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
+                  Minimal 12 karakter
+                </div>
+                <div class="pw-check" data-check="upper">
+                  <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
+                  Huruf besar (A–Z)
+                </div>
+                <div class="pw-check" data-check="lower">
+                  <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
+                  Huruf kecil (a–z)
+                </div>
+                <div class="pw-check" data-check="number">
+                  <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
+                  Angka (0–9)
+                </div>
+                <div class="pw-check" data-check="symbol">
+                  <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
+                  Simbol (!@#$%)
+                </div>
+                <div class="pw-check" data-check="common">
+                  <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span>
+                  Bukan password umum
+                </div>
+              </div>
+
+              <div class="tip-box mt-4">
+                <span class="ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                </span>
+                <div>
+                  <b>Entropy</b>
+                  <p>Ukuran “keacakan” password dalam satuan bit. Semakin tinggi, semakin sulit ditebak oleh komputer. Rule of thumb: ≥ 60 bit = kuat, ≥ 80 bit = sangat kuat.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="card reveal" style="padding: clamp(2rem, 4vw, 3rem); text-align:center">
+            <span class="chip">UJI DIRIMU</span>
+            <h2 class="mt-3">Seberapa <span class="text-accent">aman</span> kebiasaan digitalmu?</h2>
+            <p class="lead mt-2" style="margin-left:auto;margin-right:auto">
+              Jawab 7 pertanyaan singkat di halaman Infografis — ukur kewaspadaanmu dalam 2 menit.
+            </p>
+            <div class="hero-actions" style="justify-content:center">
+              <a href="./infografis.html#quiz" class="btn btn-primary" data-testid="cta-quiz">
+                Mulai Kuis
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <span class="mono">// cybershield · edukasi keamanan jaringan</span>
+        <span class="mono">Kelompok 3</span>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/password.js"></script>
+  </body>
+</html>

@@ -1,0 +1,800 @@
+/* =========================================================
+   CyberShield — Interactive Components
+   Password checker, Phishing sim, Quiz, Infographic
+   ========================================================= */
+
+/* ---------- PASSWORD STRENGTH CHECKER ---------- */
+.tool {
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.tool-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.tool-head h3 {
+  font-size: 1.25rem;
+}
+
+.tool-head .chip {
+  margin: 0;
+}
+
+.pw-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-0);
+  border: 1px solid var(--border-mid);
+  border-radius: 12px;
+  padding: 0 0.25rem 0 1rem;
+  transition: border-color var(--fast) var(--ease);
+}
+
+.pw-field:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.1);
+}
+
+.pw-field input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-100);
+  padding: 1rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.pw-field input::placeholder {
+  color: var(--text-30);
+}
+
+.pw-toggle {
+  padding: 0.5rem;
+  color: var(--text-50);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  transition: color var(--fast);
+}
+
+.pw-toggle:hover {
+  color: var(--accent);
+}
+
+.pw-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pw-bar {
+  margin-top: 1rem;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-0);
+  border: 1px solid var(--border-soft);
+  overflow: hidden;
+}
+
+.pw-bar-fill {
+  height: 100%;
+  width: 0;
+  background: var(--danger);
+  transition: width var(--med) var(--ease), background var(--med) var(--ease);
+  border-radius: 999px;
+}
+
+.pw-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-50);
+}
+
+.pw-meta .label {
+  color: var(--text-100);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.pw-checks {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+}
+
+.pw-check {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-50);
+  background: var(--bg-0);
+  transition: all var(--fast) var(--ease);
+}
+
+.pw-check.pass {
+  color: var(--accent);
+  border-color: var(--border-strong);
+  background: rgba(74, 222, 128, 0.05);
+}
+
+.pw-check .mark {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-2);
+  border: 1px solid var(--border-mid);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.pw-check .mark svg {
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  transition: opacity var(--fast);
+}
+
+.pw-check.pass .mark {
+  background: var(--accent);
+  color: var(--bg-0);
+  border-color: var(--accent);
+}
+
+.pw-check.pass .mark svg {
+  opacity: 1;
+}
+
+/* ---------- PHISHING SIMULATOR ---------- */
+.phish {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .phish {
+    grid-template-columns: 1fr;
+  }
+}
+
+.phish-email {
+  background: var(--bg-1);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font-family: var(--font-body);
+  transition: border-color var(--fast);
+}
+
+.phish-email-bar {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-soft);
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-50);
+}
+
+.phish-email-bar .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3a453a;
+}
+
+.phish-email-bar .dot.g {
+  background: var(--accent);
+}
+
+.phish-email-body {
+  padding: 1.5rem;
+}
+
+.phish-email .row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0.75rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed var(--border-soft);
+  font-size: 0.92rem;
+}
+
+.phish-email .row:last-of-type {
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.phish-email .row .k {
+  color: var(--text-50);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.phish-email .row .v {
+  color: var(--text-100);
+  word-break: break-word;
+}
+
+.phish-email .subject {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  color: var(--text-100);
+  margin: 1rem 0 0.75rem;
+}
+
+.phish-email .content {
+  color: var(--text-70);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.phish-email .content a.fake-link {
+  color: var(--info);
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.phish-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-soft);
+  background: rgba(74, 222, 128, 0.02);
+  flex-wrap: wrap;
+}
+
+.phish-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-50);
+}
+
+.phish-counter b {
+  color: var(--accent);
+}
+
+.phish-side {
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.phish-feedback {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.phish-feedback .empty {
+  color: var(--text-50);
+  font-size: 0.9rem;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-family: var(--font-mono);
+}
+
+.phish-feedback.correct {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+
+.phish-feedback.wrong {
+  border-left: 3px solid var(--danger);
+  padding-left: 1rem;
+}
+
+.phish-feedback h4 {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.phish-feedback h4.ok {
+  color: var(--accent);
+}
+
+.phish-feedback h4.no {
+  color: var(--danger);
+}
+
+.phish-feedback ul {
+  list-style: none;
+  padding: 0;
+}
+
+.phish-feedback li {
+  font-size: 0.9rem;
+  color: var(--text-70);
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--border-soft);
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.phish-feedback li::before {
+  content: "›";
+  color: var(--accent);
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+
+.phish-score {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-soft);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-50);
+}
+
+.phish-score b {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+/* ---------- QUIZ ---------- */
+.quiz {
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.quiz-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-50);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.quiz-bar {
+  height: 4px;
+  width: 100%;
+  background: var(--bg-0);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0;
+  transition: width var(--med) var(--ease);
+}
+
+.quiz-question {
+  font-family: var(--font-head);
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  color: var(--text-100);
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border-mid);
+  border-radius: 12px;
+  background: var(--bg-0);
+  color: var(--text-100);
+  text-align: left;
+  width: 100%;
+  transition: all var(--fast) var(--ease);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: rgba(74, 222, 128, 0.04);
+  transform: translateX(3px);
+}
+
+.quiz-option .key {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--border-mid);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.quiz-option.correct {
+  border-color: var(--accent);
+  background: rgba(74, 222, 128, 0.08);
+  color: var(--accent);
+}
+
+.quiz-option.correct .key {
+  background: var(--accent);
+  color: var(--bg-0);
+  border-color: var(--accent);
+}
+
+.quiz-option.wrong {
+  border-color: var(--danger);
+  background: rgba(248, 113, 113, 0.08);
+  color: var(--danger);
+}
+
+.quiz-option.wrong .key {
+  background: var(--danger);
+  color: var(--bg-0);
+  border-color: var(--danger);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-explain {
+  margin-top: 0.75rem;
+  padding: 1rem 1.15rem;
+  background: rgba(74, 222, 128, 0.05);
+  border: 1px dashed var(--border-mid);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--text-70);
+  display: none;
+}
+
+.quiz-explain.show {
+  display: block;
+}
+
+.quiz-explain b {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.quiz-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+}
+
+/* Quiz Result */
+.quiz-result {
+  text-align: center;
+  padding: 1rem;
+}
+
+.quiz-score-ring {
+  --pct: 0;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--accent) calc(var(--pct) * 1%),
+    var(--bg-0) 0
+  );
+  display: grid;
+  place-items: center;
+  position: relative;
+  transition: background 1s var(--ease);
+}
+
+.quiz-score-ring::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: var(--bg-2);
+  border: 1px solid var(--border-mid);
+}
+
+.quiz-score-ring .num {
+  position: relative;
+  font-family: var(--font-head);
+  font-size: 3rem;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.quiz-score-ring .num small {
+  font-size: 1rem;
+  color: var(--text-50);
+}
+
+.quiz-result h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-result .badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: rgba(74, 222, 128, 0.1);
+  color: var(--accent);
+  border: 1px solid var(--border-mid);
+  margin-bottom: 1rem;
+}
+
+.quiz-result p {
+  max-width: 44ch;
+  margin: 0 auto 1.5rem;
+}
+
+/* ---------- INFOGRAPHIC (HTML/CSS recreation) ---------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 780px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-card {
+  position: relative;
+  padding: 1.75rem;
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--med) var(--ease);
+}
+
+.info-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+}
+
+.info-card .num {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-family: var(--font-head);
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: rgba(74, 222, 128, 0.08);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.info-card .glyph {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: rgba(74, 222, 128, 0.06);
+  border: 1px solid var(--border-mid);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.info-card .glyph svg {
+  width: 30px;
+  height: 30px;
+}
+
+.info-card h3 {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  color: var(--text-70);
+}
+
+/* Original infographic image */
+.infographic-original {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.infographic-original img {
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-mid);
+  box-shadow: 0 20px 60px -30px rgba(74, 222, 128, 0.3);
+}
+
+.infographic-original .caption {
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-50);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ---------- BADGE/GLOSSARY ---------- */
+.glossary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.glossary-item {
+  padding: 0.85rem 1rem;
+  background: var(--bg-1);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+}
+
+.glossary-item b {
+  display: block;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.glossary-item span {
+  font-size: 0.85rem;
+  color: var(--text-70);
+}
+
+/* ---------- TABS (Pencegahan / Penanganan) ---------- */
+.tabs {
+  display: inline-flex;
+  background: var(--bg-1);
+  border: 1px solid var(--border-mid);
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 1.75rem;
+}
+
+.tab {
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-50);
+  transition: all var(--fast) var(--ease);
+}
+
+.tab:hover {
+  color: var(--text-100);
+}
+
+.tab.active {
+  background: var(--accent);
+  color: var(--bg-0);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  animation: fadeUp 0.45s var(--ease);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- TIP BOX ---------- */
+.tip-box {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  background: rgba(74, 222, 128, 0.04);
+  border: 1px solid var(--border-mid);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.tip-box .ic {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tip-box .ic svg {
+  width: 20px;
+  height: 20px;
+}
+
+.tip-box b {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.tip-box p {
+  font-size: 0.92rem;
+  margin: 0;
+}

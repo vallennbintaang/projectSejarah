@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infografis &amp; Kuis — CyberShield</title>
+    <meta
+      name="description"
+      content="Infografis 6 pilar keamanan siber + kuis interaktif untuk mengukur seberapa aman kebiasaan digitalmu."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+  </head>
+  <body>
+    <header class="nav" data-testid="main-nav">
+      <div class="container nav-inner">
+        <a href="./home.html" class="brand" data-testid="brand-link">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>
+          </span>
+          Cyber<span class="dot">/</span>Shield
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" data-testid="nav-toggle-button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <nav>
+          <ul class="nav-links" data-testid="nav-links">
+            <li><a href="./home.html" data-testid="nav-home">Beranda</a></li>
+            <li><a href="./ancaman.html" data-testid="nav-ancaman">Ancaman</a></li>
+            <li><a href="./materi.html" data-testid="nav-materi">Pencegahan &amp; Penanganan</a></li>
+            <li><a href="./infografis.html" data-testid="nav-infografis">Infografis</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container reveal">
+          <span class="eyebrow">Ringkasan Visual</span>
+          <h1>Security &amp; Technology.</h1>
+          <p class="lead">
+            Enam pilar utama keamanan siber modern — dari kerahasiaan data
+            sampai pertahanan ancaman. Di akhir halaman, uji dirimu lewat kuis interaktif.
+          </p>
+        </div>
+      </section>
+
+      <!-- INFOGRAPHIC HTML/CSS RECREATION -->
+      <section style="padding-top:1rem">
+        <div class="container">
+          <div class="info-grid" data-testid="infographic-grid">
+            <!-- 1 -->
+            <article class="info-card reveal">
+              <div class="num">01</div>
+              <div class="glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <h3>Data Confidentiality</h3>
+              <p>
+                Inti keamanan: memastikan data hanya bisa diakses oleh yang berwenang.
+                Gunakan enkripsi, kontrol akses, dan klasifikasi data sejak awal.
+              </p>
+            </article>
+
+            <!-- 2 -->
+            <article class="info-card reveal delay-1">
+              <div class="num">02</div>
+              <div class="glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <h3>Secure Access Timeliness</h3>
+              <p>
+                Akses harus diberikan <b class="text-accent">tepat orang, tepat waktu</b>.
+                Cabut akses mantan karyawan segera; gunakan session timeout &amp; MFA.
+              </p>
+            </article>
+
+            <!-- 3 -->
+            <article class="info-card reveal delay-2">
+              <div class="num">03</div>
+              <div class="glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+              </div>
+              <h3>Payment Security Protocols</h3>
+              <p>
+                Transaksi = target utama. Pastikan HTTPS, PCI-DSS, tokenisasi kartu,
+                dan verifikasi 3D Secure aktif sebelum proses pembayaran.
+              </p>
+            </article>
+
+            <!-- 4 -->
+            <article class="info-card reveal delay-3">
+              <div class="num">04</div>
+              <div class="glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg>
+              </div>
+              <h3>Mobile Device Protection</h3>
+              <p>
+                HP berisi seluruh hidupmu. Aktifkan lock screen, enkripsi perangkat,
+                “Find My Device”, dan install aplikasi hanya dari store resmi.
+              </p>
+            </article>
+
+            <!-- 5 -->
+            <article class="info-card reveal">
+              <div class="num">05</div>
+              <div class="glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11V5l8-3 8 3v6c0 6.5-8 11-8 11z"/><path d="M12 9v4M12 17h.01"/></svg>
+              </div>
+              <h3>Threat Defense Strategies</h3>
+              <p>
+                Lapisi pertahanan: firewall + antivirus + IDS + backup rutin.
+                Tidak ada satu alat pun yang cukup — gunakan strategi berlapis.
+              </p>
+            </article>
+
+            <!-- 6 -->
+            <article class="info-card reveal delay-1">
+              <div class="num">06</div>
+              <div class="glyph">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/><circle cx="12" cy="11" r="2"/></svg>
+              </div>
+              <h3>Cybersecurity Tech Stack</h3>
+              <p>
+                Kombinasi teknologi: zero-trust architecture, SIEM, EDR, VPN, &amp; kebijakan
+                akses berbasis peran (RBAC) — semua bekerja sebagai satu sistem.
+              </p>
+            </article>
+          </div>
+
+          <!-- ORIGINAL INFOGRAPHIC -->
+          <div class="infographic-original reveal" data-testid="infographic-original">
+            <hr class="divider" />
+            <span class="eyebrow">Poster Original</span>
+            <h2 class="mt-2" style="font-size: clamp(1.3rem, 2.5vw, 1.75rem)">
+              Versi Infografis Asli
+            </h2>
+            <p class="lead" style="margin: 0.75rem auto 1.5rem">
+              Infografis asli yang menjadi acuan visual halaman ini.
+            </p>
+            <img
+              src="https://customer-assets.emergentagent.com/job_ce753ef2-24c4-4d3b-953b-7d5c4807cbd0/artifacts/zhsmcvqi_Desain%20tanpa%20judul.png"
+              alt="Infografis Security and Technology"
+              loading="lazy"
+            />
+            <div class="caption">// source · desain original</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section id="quiz">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Uji Dirimu</span>
+            <h2>Seberapa aman kamu?</h2>
+            <p class="lead">
+              7 pertanyaan cepat berbasis skenario nyata. Jawab jujur — hasilnya
+              akan memberitahumu di mana celah keamananmu.
+            </p>
+          </div>
+
+          <div class="quiz reveal" data-testid="quiz"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="card reveal" style="padding: clamp(2rem, 4vw, 3rem); text-align:center">
+            <span class="chip">SELAMAT!</span>
+            <h2 class="mt-3">Kamu sudah paham <span class="text-accent">dasar keamanan siber.</span></h2>
+            <p class="lead mt-2" style="margin-left:auto;margin-right:auto">
+              Lanjutkan belajar dengan membaca ulang bagian yang masih bikin ragu — atau bagikan website ini ke orang-orang yang kamu sayangi.
+            </p>
+            <div class="hero-actions" style="justify-content:center">
+              <a href="./ancaman.html" class="btn btn-ghost">
+                Baca Ancaman
+              </a>
+              <a href="./materi.html" class="btn btn-primary">
+                Baca Pencegahan
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <span class="mono">// cybershield · edukasi keamanan jaringan</span>
+        <span class="mono">Kelompok 3</span>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/quiz.js"></script>
+  </body>
+</html>

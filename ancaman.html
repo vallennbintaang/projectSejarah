@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ancaman Siber — CyberShield</title>
+    <meta
+      name="description"
+      content="Kenali empat ancaman siber yang paling sering terjadi: Malware, Phishing, DDoS, dan Man-in-the-Middle, lengkap dengan contoh dan simulasi interaktif."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav" data-testid="main-nav">
+      <div class="container nav-inner">
+        <a href="./home.html" class="brand" data-testid="brand-link">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg>
+          </span>
+          Cyber<span class="dot">/</span>Shield
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu" data-testid="nav-toggle-button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <nav>
+          <ul class="nav-links" data-testid="nav-links">
+            <li><a href="./home.html" data-testid="nav-home">Beranda</a></li>
+            <li><a href="./ancaman.html" data-testid="nav-ancaman">Ancaman</a></li>
+            <li><a href="./materi.html" data-testid="nav-materi">Pencegahan &amp; Penanganan</a></li>
+            <li><a href="./infografis.html" data-testid="nav-infografis">Infografis</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- PAGE HERO -->
+      <section class="page-hero">
+        <div class="container reveal">
+          <span class="eyebrow">Bab 01 · Kenali Musuhmu</span>
+          <h1>Jenis Ancaman Siber.</h1>
+          <p class="lead">
+            Empat ancaman berikut paling sering terjadi di keseharian. Klik
+            setiap poin untuk melihat penjelasan lengkap, contoh nyata, dan
+            ciri-ciri khasnya.
+          </p>
+        </div>
+      </section>
+
+      <!-- THREATS LIST -->
+      <section>
+        <div class="container">
+          <div class="threat-list" data-testid="threats-list">
+            <!-- MALWARE -->
+            <article class="threat reveal" data-expandable data-testid="threat-malware">
+              <button class="threat-head" data-expand data-testid="threat-malware-toggle" aria-label="Expand Malware">
+                <span class="threat-num">01</span>
+                <div>
+                  <h3>Malware <small class="text-muted mono" style="font-weight:400;margin-left:0.5rem">· Malicious Software</small></h3>
+                  <p>Program jahat yang dibuat untuk merusak atau menyusup ke sistem komputermu.</p>
+                </div>
+                <span class="threat-chev">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="threat-body">
+                <div class="threat-body-inner">
+                  <h4>Penjelasan</h4>
+                  <p>
+                    Malware adalah istilah umum untuk <span class="mono">Malicious Software</span> — perangkat
+                    lunak yang sengaja dibuat untuk merusak, mencuri data, atau
+                    mengambil alih kontrol perangkatmu. Malware bisa menyusup
+                    lewat unduhan palsu, lampiran email, atau flashdisk.
+                  </p>
+
+                  <h4>Bentuk yang paling umum</h4>
+                  <ul>
+                    <li><b class="text-accent">Virus</b> — file yang menggandakan diri dan merusak sistem dari dalam.</li>
+                    <li><b class="text-accent">Ransomware</b> — mengunci (meng-enkripsi) file-mu, lalu meminta tebusan agar bisa dibuka.</li>
+                    <li><b class="text-accent">Trojan</b> — menyamar sebagai aplikasi biasa, tapi membuka “pintu belakang” untuk hacker.</li>
+                    <li><b class="text-accent">Spyware</b> — diam-diam merekam aktivitas (ketikan, password, kamera).</li>
+                  </ul>
+
+                  <div class="example-box">
+                    Kamu mengunduh crack game dari situs asing. Beberapa jam kemudian, seluruh file
+                    tugas kuliah berubah ekstensinya jadi <span class="mono">.locked</span> dengan pesan
+                    “bayar 0.1 BTC untuk membuka” — itu <b class="text-accent">Ransomware</b>.
+                  </div>
+
+                  <div class="tip-box mt-3">
+                    <span class="ic">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                    </span>
+                    <div>
+                      <b>Enkripsi</b>
+                      <p>Proses mengacak data menggunakan kunci khusus, sehingga data hanya bisa dibaca oleh yang memiliki kuncinya.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- PHISHING -->
+            <article class="threat reveal delay-1" data-expandable data-testid="threat-phishing">
+              <button class="threat-head" data-expand data-testid="threat-phishing-toggle" aria-label="Expand Phishing">
+                <span class="threat-num">02</span>
+                <div>
+                  <h3>Phishing <small class="text-muted mono" style="font-weight:400;margin-left:0.5rem">· Pengelabuan</small></h3>
+                  <p>Pelaku menyamar sebagai pihak tepercaya untuk mencuri data sensitifmu.</p>
+                </div>
+                <span class="threat-chev">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="threat-body">
+                <div class="threat-body-inner">
+                  <h4>Penjelasan</h4>
+                  <p>
+                    Phishing adalah teknik penipuan dimana pelaku menyamar sebagai bank,
+                    layanan resmi, atau bahkan temanmu — untuk memancingmu
+                    memberikan password, OTP, atau nomor rekening secara sukarela.
+                  </p>
+
+                  <h4>Ciri-ciri khas</h4>
+                  <ul>
+                    <li>Menggunakan <b>urgensi palsu</b>: “akun akan diblokir dalam 24 jam!”</li>
+                    <li>Domain palsu yang mirip: <span class="mono">inst4gram.com</span>, <span class="mono">paypa1-login.net</span>.</li>
+                    <li>Meminta data sensitif (password/OTP) lewat link.</li>
+                    <li>Salam generik: “Pelanggan Yth” (tanpa nama).</li>
+                  </ul>
+
+                  <div class="example-box">
+                    Kamu dapat email yang seolah dari Instagram, mengatakan
+                    akunmu akan diblokir jika tidak mengklik link dan memasukkan
+                    password. Begitu kamu klik dan login — password sudah dicuri.
+                  </div>
+
+                  <p class="mt-3">
+                    <a href="#phishing-sim" class="btn btn-ghost" data-testid="threat-phishing-cta">
+                      Coba Simulasi Phishing ↓
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- DDoS -->
+            <article class="threat reveal delay-2" data-expandable data-testid="threat-ddos">
+              <button class="threat-head" data-expand data-testid="threat-ddos-toggle" aria-label="Expand DDoS">
+                <span class="threat-num">03</span>
+                <div>
+                  <h3>DDoS <small class="text-muted mono" style="font-weight:400;margin-left:0.5rem">· Serangan Banjir Data</small></h3>
+                  <p>Membanjiri server dengan lalu lintas palsu hingga lumpuh.</p>
+                </div>
+                <span class="threat-chev">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="threat-body">
+                <div class="threat-body-inner">
+                  <h4>Penjelasan</h4>
+                  <p>
+                    <span class="mono">DDoS</span> (<i>Distributed Denial of Service</i>) adalah serangan yang
+                    membanjiri server atau website dengan lalu lintas data
+                    (pengunjung palsu) dalam jumlah sangat besar, bersamaan,
+                    sehingga server kelebihan beban dan mati (<span class="mono">down</span>).
+                  </p>
+
+                  <h4>Analoginya</h4>
+                  <p>
+                    Bayangkan sebuah toko kecil. Tiba-tiba ribuan orang masuk
+                    serentak tapi tidak ada yang beli — pelanggan asli tidak bisa
+                    masuk, kasir bingung, dan toko akhirnya tutup. Itulah DDoS di
+                    dunia digital.
+                  </p>
+
+                  <div class="example-box">
+                    Sebuah website ujian sekolah tiba-tiba tidak bisa diakses
+                    karena “diserang” jutaan permintaan dari bot di detik yang
+                    sama. Murid asli gagal login; server mati selama beberapa jam.
+                  </div>
+
+                  <div class="tip-box mt-3">
+                    <span class="ic">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                    </span>
+                    <div>
+                      <b>Botnet</b>
+                      <p>Jaringan ribuan perangkat (komputer/IoT) yang sudah diretas dan bisa dikendalikan dari jarak jauh untuk melancarkan serangan DDoS.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- MitM -->
+            <article class="threat reveal delay-3" data-expandable data-testid="threat-mitm">
+              <button class="threat-head" data-expand data-testid="threat-mitm-toggle" aria-label="Expand MitM">
+                <span class="threat-num">04</span>
+                <div>
+                  <h3>Man-in-the-Middle <small class="text-muted mono" style="font-weight:400;margin-left:0.5rem">· MitM · Penyadapan</small></h3>
+                  <p>Pelaku menyusup di antara komunikasi dua pihak untuk mengintip atau mengubah data.</p>
+                </div>
+                <span class="threat-chev">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </button>
+              <div class="threat-body">
+                <div class="threat-body-inner">
+                  <h4>Penjelasan</h4>
+                  <p>
+                    Pada serangan Man-in-the-Middle, pelaku duduk “di tengah”
+                    komunikasi — misalnya antara HP-mu dan router WiFi kafe —
+                    sehingga semua data yang lewat bisa disadap atau bahkan
+                    dimodifikasi tanpa kamu sadari.
+                  </p>
+
+                  <h4>Kapan ini terjadi?</h4>
+                  <ul>
+                    <li>WiFi publik <b>tanpa password</b> / tanpa pengamanan.</li>
+                    <li>Koneksi HTTP (bukan HTTPS) saat login ke website.</li>
+                    <li>Perangkat jaringan (router rumah) yang masih pakai password bawaan pabrik.</li>
+                  </ul>
+
+                  <div class="example-box">
+                    Kamu login mobile banking di kafe pakai WiFi gratis tanpa password.
+                    Hacker yang duduk tiga meja darimu sudah memasang “penyadap” di jaringan
+                    yang sama — dan melihat semua data yang kamu kirim, termasuk password.
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <hr class="divider" />
+
+          <!-- PHISHING SIMULATOR -->
+          <div id="phishing-sim" class="reveal">
+            <div class="section-head">
+              <span class="eyebrow">Latihan Interaktif</span>
+              <h2>Simulator Phishing</h2>
+              <p class="lead">
+                Lima email nyata — beberapa penipuan, beberapa aman. Tugasmu: tentukan mana
+                yang <b class="text-accent">Phishing</b> dan mana yang <b>Aman</b>. Kami beri penjelasan tiap jawabannya.
+              </p>
+            </div>
+
+            <div data-testid="phish-simulator">
+              <div class="tool">
+                <div class="phish-counter">
+                  <span data-testid="phish-counter">Email <b>1</b> / 5 • skor: <b>0</b></span>
+                  <span class="mono">Benar/salah dianalisis per email</span>
+                </div>
+                <div class="quiz-bar" style="margin-bottom:1.25rem">
+                  <div class="quiz-bar-fill" data-testid="phish-progress"></div>
+                </div>
+
+                <div class="phish">
+                  <div class="phish-email" data-testid="phish-email">
+                    <div class="phish-email-bar">
+                      <span class="dot"></span><span class="dot"></span><span class="dot g"></span>
+                      <span style="margin-left:auto">inbox › email</span>
+                    </div>
+                    <div class="phish-email-body">
+                      <div class="row"><span class="k">from</span><span class="v" data-testid="phish-from"></span></div>
+                      <div class="row"><span class="k">to</span><span class="v" data-testid="phish-to"></span></div>
+                      <div class="subject" data-testid="phish-subject"></div>
+                      <div class="content" data-testid="phish-body"></div>
+                    </div>
+                    <div class="phish-actions">
+                      <button class="btn btn-ghost" data-testid="phish-safe-btn">
+                        ✓ Aman
+                      </button>
+                      <button class="btn btn-primary" data-testid="phish-phish-btn" style="background:var(--danger);color:var(--bg-0)">
+                        ⚠ Phishing
+                      </button>
+                      <button class="btn btn-primary" data-testid="phish-next-btn" style="display:none;margin-left:auto">
+                        Email berikutnya →
+                      </button>
+                    </div>
+                  </div>
+
+                  <aside class="phish-side">
+                    <div class="eyebrow">Analisa</div>
+                    <div class="phish-feedback mt-3" data-testid="phish-feedback">
+                      <div class="empty">Putuskan: ini <b class="text-accent">AMAN</b> atau <b style="color:var(--danger)">PHISHING</b>?</div>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section>
+        <div class="container">
+          <div class="card reveal" style="padding: clamp(2rem, 4vw, 3rem); text-align:center">
+            <span class="chip">LANJUT</span>
+            <h2 class="mt-3">Sudah tahu ancamannya. Sekarang <span class="text-accent">kunci pintumu</span>.</h2>
+            <div class="hero-actions" style="justify-content:center">
+              <a href="./materi.html" class="btn btn-primary" data-testid="cta-next-prevention">
+                Buka Pencegahan &amp; Penanganan
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <span class="mono">// cybershield · edukasi keamanan jaringan</span>
+        <span class="mono">Kelompok 3</span>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/phishing.js"></script>
+  </body>
+</html>
